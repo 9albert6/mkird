@@ -1,0 +1,23 @@
+
+Kod stacji                                           
+Nazwa stacji                                         
+Rok                                                  
+Miesiąc                                              
+zachmurzenie [oktanty]    
+Status pomiaru NOS                                   
+prędkość wiatru [m/s]            
+Status pomiaru FWS                                   
+temperatura [st C]                 
+Status pomiaru TEMP                                  
+ciśnienie pary wodnej [hPa]       
+Status pomiaru CPW                                   
+wilgotność względna [%]          
+Status pomiaru WLGS                                  
+ciśnienie na poziomie stacji [hPa]
+Status pomiaru PPPS                                  
+ciśnienie na pozimie morza [hPa]  
+Status pomiaru PPPM                                  
+Suma opadu dzień [mm]                                
+Status pomiaru WODZ                                  
+Suma opadu noc   [mm]                               
+Status pomiaru WONO                                  
