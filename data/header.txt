@@ -15,9 +15,9 @@ wilgotność względna [%]
 Status pomiaru WLGS                                  
 ciśnienie na poziomie stacji [hPa]
 Status pomiaru PPPS                                  
-ciśnienie na pozimie morza [hPa]  
+ciśnienie na pozimie morza [hPa]
 Status pomiaru PPPM                                  
 Suma opadu dzień [mm]                                
 Status pomiaru WODZ                                  
-Suma opadu noc   [mm]                               
+Suma opadu noc [mm]                               
 Status pomiaru WONO                                  
