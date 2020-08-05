@@ -6,7 +6,7 @@ import shlex
 from platform import system
 import sys
 
-__all__ = ["get_data","read_column_names"]
+__all__ = ["get_data","read_column_names","normalize_particular_columns"]
 
 DATA_FOLDER = "./data"
 
