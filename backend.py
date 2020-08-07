@@ -10,6 +10,7 @@ from sklearn.metrics import confusion_matrix
 from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
 from weather_api import *
+from statsmodels.tsa.arima_model import ARMA
 
 df = get_data("zakopane")
 
@@ -38,9 +39,6 @@ df['deszcz w nocy']= value
 df = df.drop(df.columns[11],axis = 1)
 df = df.drop(df.columns[11],axis = 1)
 
-#normalizacja danych
-columns_to_normalize = [[5],[6],[7],[8],[9],[10]]
-normalize_particular_columns(df, columns_to_normalize)
 
 #zmiana formatu daty (potrzebne do predykcji)
 date = pd.to_datetime((df['Rok']*10000+df['Miesiąc']*100+df['Dzień']).apply(str),format='%Y%m%d')
@@ -50,3 +48,16 @@ for i in range(0,3):
 
 #sortowanie według daty
 df.sort_values(by=['Data'], inplace=True)
+
+#przewidywanie przyszłych parametrów
+def make_predict(nazwa_kolumny,ilosc_dni):
+    df2 = df[['Data',nazwa_kolumny]]
+    df2.index = pd.DatetimeIndex(df2['Data'])
+    model = ARMA(df2[nazwa_kolumny], order=(4, 2))
+    model_fit = model.fit(disp=False)
+    forecast = model_fit.predict(len(df2),len(df2)+ilosc_dni)
+    return forecast
+
+#normalizacja danych - to na koniec 
+columns_to_normalize = [[5],[6],[7],[8],[9],[10]]
+normalize_particular_columns(df, columns_to_normalize)
