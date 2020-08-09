@@ -9,7 +9,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import confusion_matrix
 from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
-from weather_api import *
+from weather_api import get_data, read_column_names, normalize_particular_columns
 from statsmodels.tsa.arima_model import ARMA
 
 df = get_data("zakopane")
@@ -58,6 +58,16 @@ def make_predict(nazwa_kolumny,ilosc_dni):
     forecast = model_fit.predict(len(df2),len(df2)+ilosc_dni)
     return forecast
 
+#stworzenie zbioru danych z prewidywanymi parametrami
+predicted_data = [] 
+predicted_data.append(make_predict('Średnia dobowa temperatura [°C]',7))
+predicted_data.append(make_predict('Średnia dobowa prędkość wiatru [m/s]',7))
+predicted_data.append(make_predict('Średnia dobowe ciśnienie pary wodnej [hPa]',7))
+predicted_data.append(make_predict('Średnia dobowa wilgotność względna [%]',7))
+predicted_data.append(make_predict('Średnia dobowe ciśnienie na poziomie stacji [hPa]',7))
+predicted_data.append(make_predict('Średnie dobowe zachmurzenie ogólne [oktanty]',7))
+
+print(predicted_data)
 #normalizacja danych - to na koniec 
-columns_to_normalize = [[5],[6],[7],[8],[9],[10]]
-normalize_particular_columns(df, columns_to_normalize)
+# columns_to_normalize = [[5],[6],[7],[8],[9],[10]]
+# normalize_particular_columns(df, columns_to_normalize)
