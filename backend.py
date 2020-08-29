@@ -17,12 +17,8 @@ df = get_data("zakopane")
 #tworzenie labeli
 value = []
 data = df['Suma opadu dzień  [mm]']
-data = data.to_numpy()
-for row in data:
-    if row == 0:
-        value.append(0)
-    elif row > 0:
-        value.append(1)
+data = data.to_numpy()#TODO: need to return only predicted values, not a date xD J384Ć DUDE
+
 df['deszcz w dzień']= value
 
 value1 = []
@@ -67,6 +63,9 @@ predicted_data.append(make_predict('Średnia dobowa wilgotność względna [%]',
 predicted_data.append(make_predict('Średnia dobowe ciśnienie na poziomie stacji [hPa]',7))
 predicted_data.append(make_predict('Średnie dobowe zachmurzenie ogólne [oktanty]',7))
 
+#przygotowanie zbioru testowego
+df1 = pd.DataFrame(predicted_data, index=['Średnia dobowa temperatura [°C]','Średnia dobowa prędkość wiatru [m/s]','Średnia dobowe ciśnienie pary wodnej [hPa]','Średnia dobowa wilgotność względna [%]','Średnia dobowe ciśnienie na poziomie stacji [hPa]','Średnie dobowe zachmurzenie ogólne [oktanty]'])
+df1 = df1.T
 
 #normalizacja danych - to na koniec 
 # columns_to_normalize = [[5],[6],[7],[8],[9],[10]]
