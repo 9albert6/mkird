@@ -95,14 +95,14 @@ Xtrain, Xtest, ytrain, ytest  = train_test_split(X, y, test_size=0.2, random_sta
 
 #Model SVN
 clf= svm.SVC(kernel='linear', C=1.0)
-clf.fit(Xtrain, ytrain)
+clf.fit(Xtrain, ytrain.values.ravel())
 
 ypred = clf.predict(Xtest)
 clf_score = clf.score(Xtest, ytest)
 
 #Model regresji liniowej
 logistic_regression= LogisticRegression()
-logistic_regression.fit(Xtrain, ytrain)
+logistic_regression.fit(Xtrain, ytrain.values.ravel())
 y_pred_r=logistic_regression.predict(Xtest)
     
 accur = accuracy_score(ytest, y_pred_r)
@@ -110,7 +110,7 @@ accur = accuracy_score(ytest, y_pred_r)
 #Model KNN
 knn = KNeighborsClassifier()
 
-knn.fit(Xtrain, ytrain)
+knn.fit(Xtrain, ytrain.values.ravel())
 y_pred_knn = knn.predict(Xtest)
 accurKNN = accuracy_score(ytest, y_pred_knn)
 
@@ -119,3 +119,14 @@ result_knn = knn.predict(df1)
 result_log = logistic_regression.predict(df1)
 result_svn = clf.predict(df1)
 
+def return_accurancy_score():
+    return chuj, dupa, cycki 
+
+def return_predicted_labels():
+    return chuj, dupa, cycki 
+
+def return_datetime():
+    return chuj, dupa, cycki 
+#funkcja zwracająca listę dat
+#funkcja zwracająca listę 0,1 - deszcz/brak deszczu
+#funkcja zwracająca procent proprawnosci prognozy
