@@ -84,7 +84,10 @@ columns_to_normalize = [[5],[6],[7],[8],[9],[10]]
 normalize_particular_columns(df, columns_to_normalize)
 
 #normalizacja danych testowych
-columns_to_normalize1.
+columns_to_normalize1 = [[0], [1], [2], [3], [4], [5]]
+normalize_particular_columns(df1, columns_to_normalize1)
+
+#dane treningowe
 X = df[[df.columns[3], df.columns[4], df.columns[5] ,df.columns[6], df.columns[7], df.columns[8]]]
 y = df[[df.columns[11]]]
 
@@ -102,7 +105,7 @@ logistic_regression= LogisticRegression()
 logistic_regression.fit(Xtrain, ytrain.values.ravel())
 y_pred_r=logistic_regression.predict(Xtest)
     
-accur = accuracy_scor.e(ytest, y_pred_r)
+accur = accuracy_score(ytest, y_pred_r)
 
 #Model KNN
 knn = KNeighborsClassifier()
@@ -116,14 +119,19 @@ result_knn = knn.predict(df1)
 result_log = logistic_regression.predict(df1)
 result_svn = clf.predict(df1)
 
-def return_accurancy_score():
-    return 
-
-def return_predicted_labels():
-    return 
-
-def return_datetime():
-    return 
-#funkcja zwracająca listę dat
-#funkcja zwracająca listę 0,1 - deszcz/brak deszczu
 #funkcja zwracająca procent proprawnosci prognozy
+def return_accurancy_score():
+    return accurKNN,accur,clf_score 
+
+#funkcja zwracająca listę 0,1 - deszcz/brak deszczu
+def return_predicted_labels():
+    return [result_knn, result_log, result_svn]
+
+#funkcja zwracająca listę dat
+def return_datetime():
+    return df1.index.strftime('%d/%m/%Y').to_numpy()
+
+
+
+print(return_predicted_labels())
+

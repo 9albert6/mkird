@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>760</width>
-    <height>526</height>
+    <height>530</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -33,7 +33,7 @@
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>-20</y>
+     <y>-10</y>
      <width>761</width>
      <height>561</height>
     </rect>
@@ -148,6 +148,61 @@
     <pixmap>sun.png</pixmap>
    </property>
   </widget>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>400</y>
+     <width>141</width>
+     <height>111</height>
+    </rect>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
+   <property name="title">
+    <string>Wybór modelu</string>
+   </property>
+   <widget class="QRadioButton" name="knn">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>108</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>KNN</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="reg">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>50</y>
+      <width>108</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Regresja log.</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="svn">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>108</width>
+      <height>27</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>SVN</string>
+    </property>
+   </widget>
+  </widget>
   <zorder>image</zorder>
   <zorder>Exit</zorder>
   <zorder>imagerain</zorder>
@@ -157,6 +212,7 @@
   <zorder>return_2</zorder>
   <zorder>procent</zorder>
   <zorder>sun</zorder>
+  <zorder>groupBox</zorder>
  </widget>
  <resources/>
  <connections>
