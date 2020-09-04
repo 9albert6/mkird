@@ -130,3 +130,5 @@ def return_predicted_labels():
 #funkcja zwracająca listę dat
 def return_datetime():
     return df1.index.strftime('%d/%m/%Y').to_numpy()
+
+print(return_predicted_labels())
