@@ -41,7 +41,7 @@ for row1 in data1:
         value1.append(0)
     elif row1 > 0:
         value1.append(1)
-df['deszcz w nocy']= value
+df['deszcz w nocy']= value1
 
 #wywalenie niepotrzebnych kolumn
 df = df.drop(df.columns[11],axis = 1)
